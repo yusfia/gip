@@ -15,4 +15,9 @@ class UserModel extends CI_Model
 	{
 		return $this->db->get($table);
 	}
+
+    public function searchByName($name)
+    {
+        return $this->db->select('*')->from('user')->where("nama LIKE '%$name%'")->get();
+    }
 }
